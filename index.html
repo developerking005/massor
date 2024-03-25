@@ -35,6 +35,9 @@ src="https://www.facebook.com/tr?id=419084384144106&ev=PageView&noscript=1"
         <div class="col-md-6 mx-auto text-center">
             <h2 class="header">ASIA'S NO 1 TIPPER</h2>
             <h1 class="main"><i class="fa-solid fa-crown" style="color: rgba(246, 198, 7, 0.947);"></i> MANSOOR BHAI <i class="fa-solid fa-crown"  style="color: rgba(246, 198, 7, 0.947);"></i></h1>
+            <div class="timer-container">
+                <div id="timer">60</div>
+            </div>
             <a href="https://t.me/+vAGvIcfTYSs1NWJl" target="_blank" class="telegram-button">
                 <i class="fa-brands fa-telegram"></i>  
                 JOIN NOW FOR FREE
@@ -57,5 +60,28 @@ src="https://www.facebook.com/tr?id=419084384144106&ev=PageView&noscript=1"
         </div>        
     </div>
 </div>
+    <script>
+    // Function to start countdown
+    function startCountdown(duration, display) {
+      var timer = duration, seconds;
+      setInterval(function () {
+        seconds = parseInt(timer % 60, 10);
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = seconds;
+
+        if (--timer < 0) {
+          timer = duration;
+        }
+      }, 1000);
+    }
+
+    // Initialize countdown
+    window.onload = function () {
+      var sixtySeconds = 60,
+          display = document.querySelector('#timer');
+      startCountdown(sixtySeconds, display);
+    };
+  </script>
 </body>
 </html>
